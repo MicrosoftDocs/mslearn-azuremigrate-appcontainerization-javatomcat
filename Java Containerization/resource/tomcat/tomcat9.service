@@ -15,7 +15,7 @@ Environment=CATALINA_PID=/opt/tomcat9/temp/tomcat.pid
 Environment=CATALINA_HOME=/opt/tomcat9
 Environment=CATALINA_BASE=/opt/tomcat9
 Environment='CATALINA_OPTS=-Xms8192M -Xmx8192M -server -XX:+UseParallelGC'
-Environment='JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom -Dairsonic.home=/var'
+Environment='JAVA_OPTS=-Djava.awt.headless=true -Djava.security.egd=file:/dev/./urandom -Dairsonic.home=/var/airsonic'
 
 ExecStart=/opt/tomcat9/bin/startup.sh
 ExecStop=/opt/tomcat9/bin/shutdown.sh
@@ -27,7 +27,7 @@ RestartSec=10
 Restart=always
 
 # dont do this until dir is created
-ReadWritePaths=/var/
+ReadWritePaths=/var/airsonic
 
 [Install]
 WantedBy=multi-user.target
