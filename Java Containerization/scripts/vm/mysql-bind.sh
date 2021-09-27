@@ -19,8 +19,8 @@ tar xvzf mysql-connector-java-*tar.gz
 # copy to Tomcat9/lib folder 
 cp mysql-connector-java-*/mysql-connector-java-*.jar /opt/tomcat9/lib 
 
-echo 'DatabaseConfigType=jndi' >> /var/airsonic.properties
-echo 'DatabaseConfigJNDIName=jdbc/airsonicDB' >> /var/airsonic.properties
+echo 'DatabaseConfigType=jndi' >> /var/airsonic/airsonic.properties
+echo 'DatabaseConfigJNDIName=jdbc/airsonicDB' >> /var/airsonic/airsonic.properties
 
 # write to tomcat9.service
 sed -i "s%Environment=MYSQL_SERVER_ADMIN_LOGIN_NAME=%Environment=MYSQL_SERVER_ADMIN_LOGIN_NAME=$MYSQL_ADMIN_USER%" /etc/systemd/system/tomcat9.service
