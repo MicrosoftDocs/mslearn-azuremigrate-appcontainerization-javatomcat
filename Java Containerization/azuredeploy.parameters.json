@@ -57,7 +57,7 @@
       "value": "configure-labvm.ps1"
     },
     "vmTCCustomScriptUri": {
-      "value": "https://raw.githubusercontent.com/MicrosoftDocs/mslearn-azuremigrate-appcontainerization-javatomcat/main/ASP.NET%20Containerization/"
+      "value": "https://raw.githubusercontent.com/MicrosoftDocs/mslearn-azuremigrate-appcontainerization-aspnet/main/ASP.NET%20Containerization/"
     }
   }
 }
