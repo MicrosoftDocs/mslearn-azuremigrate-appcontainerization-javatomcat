@@ -21,7 +21,7 @@ mv * /opt/tomcat9/webapps/airsonic
 
 #AIRSONIC_BASEDIR=/datadrive/airsonic
 AIRSONIC_BASEDIR=/var/airsonic
-mkdir -p $AIRSONIC_BASEDIR
+sudo mkdir -p $AIRSONIC_BASEDIR
 
 # create music, media, podcasts and playlists folders
 cd $AIRSONIC_BASEDIR
