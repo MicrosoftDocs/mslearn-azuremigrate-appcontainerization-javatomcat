@@ -1,44 +1,19 @@
-# Airsonic deployment 
-Ubuntu/Tomcat/Java/mySQL environment for Azure airsonic app deployment
+These scripts have been created by Jason Cook, Senior Technical Architect at Microsoft, for the purpose of learning about containerizing and migrating Java applications to Azure. These scripts are intended to be used with Microsoft Learn modules for Azure Migrate App Containerization. 
 
+Currently, these scripts are being used to deploy a two-tier Java application running on Apache Tomcat for the following Microsoft Learn modules - 
 
-Ported from https://github.com/selvasingh/tomcat-on-virtual-machine
+- [Migrate Java applications to Azure Kubernetes Service](https://docs.microsoft.com/learn/modules/migrate-java-app-azure-kubernetes-service/)
+- [Migrate Java applications to Azure App Service](https://docs.microsoft.com/learn/modules/migrate-java-app-azure-app-service/)
 
-Fully automated deployment via arm templates and custom scripts
+# Contributing
+This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
-### Port Notes:
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.
 
-* Does not configure transcoding, i.e. sudo snap install ffmpeg
-* Binding of airsonic app to mysql first requires the app be started to create a .properties file, stopped, then the .properties needs to be updated with jndi binding.  At the end of the airsonic install, the app is started then stopped to create this file using a 30 second wait period between operations.  The properties file is updated with binding during the mysql binding setup.
-
-## Deployment
-
-To deploy this workshop environment, begin by navigating to the Azure portal at https://portal.azure.com and opening the cloud shell as shown belew:
-
-![Cloud Shell](../media/openshell.png)
-
-...
-
-![Terminal](../media/shell2.png)
-
-From the terminal window execute the following commands to clone the App Migration Workshop project.  Navigate to the Java migrate sub module and execute the deployment script substituting the target region name and resource group for which the resources will be deployed.
-
-    git clone https://github.com/microsoft/MTC_APPContainerization.git
-    cd MTC_APPContainerization/Java\ Containerization/
-    chmod +x scripts/deploy.sh
-    ./scripts/deploy.sh '<REGION NAME>' '<RESOURCE GROUP>'
-
-For example:
-
-     ./scripts/deploy.sh 'westus' 'jm-rg2'
-
-Total deployment will take ~5 minutes.  When complete navigate to the newly created resource group in the azure portal.  Find the created vm named TomcatServer click on its name.  
-
-![Tomcat VM.](../media/server.jpg)
-
-Identify the public IP address provisioned for the VM.
-
-![Public IP.](../media/ip.jpg)
-
-Use the IP address to access the Airsonic app at http://{ip}:8080/airsonic
-![Airsonic App.](../media/app.jpg)
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
